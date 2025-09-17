@@ -1,0 +1,185 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: "Cormorant Garamond", serif;
+}
+
+/* ---------------- HEADER ---------------- */
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 5vw;
+    background-color: #fcf7f0;
+    color: #6b4117;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+/* Title (left) */
+.header .title {
+    flex: 1;
+}
+
+/* Logo (center) */
+.header img {
+    flex: 0;
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+/* Navbar (right) */
+.navbar {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #6b4117;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar a:hover {
+    color: rgba(107, 65, 23, 0.5);
+}
+
+/* -------- Responsive: Sidebar Layout -------- */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .header .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        text-align: center;
+        flex: unset;
+    }
+
+    .header img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 2rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+}
+
+/* ---------------- LOGO SECTION ---------------- */
+section.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcf7f0;
+    min-height: 20vh;
+    padding: 6rem 2rem 2rem;
+    text-align: center;
+    color: #6b4117;
+}
+
+.logo h1 {
+    font-family: "Birthstone", cursive;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-top: -3rem;
+}
+/* Desktop styles (default) */
+.table-container {
+    display: flex;
+    justify-content: center;
+    background-image: url("cle marriage/meet the couple.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 2rem;
+    overflow-x: auto;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    max-width: 90vw; /* Take up most of the viewport width */
+    border-collapse: separate;
+    border-spacing: 2rem;
+    color: #6b4117;
+    background-color: transparent;
+}
+
+tr, td {
+    border: 2px solid #fcf7f0;
+    border-radius: 2rem;
+    background-color: #fcf7f0;
+    padding: 1.5rem;
+    text-align: justify;
+    word-break: break-word;
+    min-width: 250px; /* Prevent cells from shrinking too much */
+}
+
+/* Responsive stacked layout for smaller screens */
+@media (max-width: 768px) {
+    table, tbody, tr {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        margin-bottom: 2rem;
+    }
+
+    td {
+        display: block;
+        width: 100%;
+        min-width: auto;
+    }
+
+    table {
+        font-size: 0.9rem;
+        border-spacing: 1rem;
+    }
+
+    .table-container {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 0.85rem;
+    }
+
+    td {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,368 @@
+/* ---------------- GLOBAL RESET ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* ---------------- HEADER ---------------- */
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 5vw;
+  z-index: 1000;
+  background-color: #fcf7f0;
+  color: #6b4117;
+  font-size: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+  font-family: "Cormorant Garamond", serif;
+}
+
+.header .title {
+  flex: 1;
+}
+
+.header img {
+  flex: 0;
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+}
+
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: #6b4117;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  color: rgb(107, 65, 23, 0.5);
+}
+
+/* ---------------- RESPONSIVE HEADER ---------------- */
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+
+  .header .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    flex: unset;
+  }
+
+  .header img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .navbar a {
+    padding: 10px 0;
+    font-size: 18px;
+  }
+}
+
+/* ---------------- LOGO SECTION ---------------- */
+section.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcf7f0;
+  min-height: 20vh;
+  padding: 6rem 2rem 2rem;
+  text-align: center;
+  color: #6b4117;
+}
+
+.logo h1 {
+  font-size: clamp(4rem, 30%, 3rem);
+  font-family: "Birthstone";
+  margin-top: -3rem;
+}
+
+/* ---------------- INTRODUCTION ---------------- */
+section.introduction {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background-color: #6b4117;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 5vw;
+  gap: 2rem;
+  color: #fcf7f0;
+}
+
+.intro-content h1 {
+  font-size: clamp(2rem, 30%, 2.5rem);
+}
+
+.intro-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.intro-info h3 {
+  font-size: clamp(1.5rem, 30%, 2rem);
+}
+
+/* ---------------- CAROUSEL ---------------- */
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 400px;          /* fixed height for carousel */
+  object-fit: contain;
+  display: none;
+  border-radius: 2rem;
+}
+
+.carousel-images img.active {
+  display: block;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  color: #6b4117;
+  font-size: 2rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.1s;
+}
+
+.carousel button:hover {
+  background: rgba(252, 247, 240, 0.9);
+}
+
+.carousel .prev {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+
+/* ---------------- RESPONSIVE INTRO + CAROUSEL ---------------- */
+@media (max-width: 768px) {
+  .intro-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .carousel {
+    max-width: 90%;
+  }
+}
+/* ---------------- 1st Part ----------------*/
+.part1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 5vw;
+    gap: 5rem;
+    background-color: #fcf7f0;
+    color: #6b4117;
+}
+
+/* Image */
+.part1 img {
+    width: min(80vw, 500px);
+    border-radius: 1rem;
+}
+
+/* Text Info */
+.part1-info {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 1rem;
+    padding: 4rem 5vw;
+}
+
+.part1-info h2 {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+}
+.part1-info ul {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 1rem;
+}
+/* Responsive: stack items vertically */
+@media (max-width: 768px) {
+    .part1 {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .part1-info {
+        margin: 0; /* remove side auto margin */
+        align-items: center;
+    }
+
+    .part1 img {
+        width: 90%;
+    }
+}
+
+
+/* ---------------- 2nd Part ---------------- */
+.part2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 5vw;
+    gap: 5rem;
+    background-color: #6b4117;
+    color: #fcf7f0;
+}
+
+
+/* Image */
+.part2 img {
+    width: min(80vw, 500px);
+    border-radius: 1rem;
+}
+
+/* Text Info */
+.part2-info {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 1rem;
+    padding: 4rem 5vw;
+}
+
+.part2-info h2 {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+}
+.part2-info ol {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 1rem;
+}
+/* Responsive: stack items vertically */
+@media (max-width: 768px) {
+    .part2 {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .part2-info {
+        margin: 0; /* remove side auto margin */
+        align-items: center;
+    }
+
+    .part2 img {
+        width: 90%;
+    }
+}
+.collage {
+    background-color: #fcf7f0;
+    padding: 4rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; 
+    justify-content: center;
+}
+.content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+.content img{
+    width: 80%;
+    margin: auto;
+    aspect-ratio: 2/2;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #6b4117;
+    transition: 0.3s;
+}
+
+.content img:hover {
+    transform: scale(1.05);
+}
+/* ---------------- NEXT PAGE BUTTON ---------------- */
+.next-pageContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #6b4117;
+}
+
+.next-pageContainer a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fcf7f0;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #fcf7f0;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.next-pageContainer a i {
+  margin-right: 8px; /* Add space between icon and text */
+  vertical-align:text-top; /* Align icon vertically */
+}
+.next-pageContainer a:hover {
+  background-color: #fcf7f0;
+  color:  #6b4117;
+}
